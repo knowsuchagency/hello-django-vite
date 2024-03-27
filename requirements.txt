@@ -1,0 +1,6 @@
+django
+whitenoise[brotli]
+decouple
+gunicorn
+python-decouple
+django-vite
