@@ -141,6 +141,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+    BASE_DIR / "frontend/public",
 ]
 
 DJANGO_VITE = {
