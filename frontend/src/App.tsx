@@ -1,17 +1,17 @@
 import "@mantine/core/styles.css";
-import { MantineProvider } from "@mantine/core";
-import { theme } from "./theme";
+import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 
-import  HeroBullets  from "./components/HeroBullets/HeroBullets";
+import HeroBullets from "./components/HeroBullets/HeroBullets";
 import ColorPickerDemo from "./components/ColorPickerDemo";
-
-
 
 export default function App() {
   return (
-    <MantineProvider theme={theme}>
-      <HeroBullets />
-      <ColorPickerDemo />
-    </MantineProvider>
+    <>
+      <ColorSchemeScript defaultColorScheme="auto" />
+      <MantineProvider defaultColorScheme="auto">
+        <HeroBullets />
+        {/* <ColorPickerDemo /> */}
+      </MantineProvider>
+    </>
   );
 }
