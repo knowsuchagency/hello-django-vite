@@ -55,7 +55,15 @@ export default function HeroBullets() {
           </List>
 
           <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
+            <Button
+              radius="xl"
+              size="md"
+              className={classes.control}
+              component="a"
+              href="https://mantine.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Get started
             </Button>
             <Button
@@ -63,6 +71,10 @@ export default function HeroBullets() {
               radius="xl"
               size="md"
               className={classes.control}
+              component="a"
+              href="https://github.com/mantinedev/mantine"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Source code
             </Button>

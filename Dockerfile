@@ -30,4 +30,4 @@ RUN .venv/bin/python manage.py collectstatic --noinput
 
 EXPOSE 8000
 
-CMD [".venv/bin/gunicorn", "--bind", ":8080", "--workers", "3", "--threads", "2", "--max-requests", "1000", "--max-requests-jitter", "200", "--timeout", "0", "hello_react.wsgi"]
+CMD [".venv/bin/gunicorn", "--bind", ":8080", "--workers", "3", "--threads", "2", "--max-requests", "1000", "--max-requests-jitter", "200", "--timeout", "0", "hello_vite.wsgi"]
