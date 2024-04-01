@@ -10,7 +10,7 @@ export default defineConfig({
   base: "/static/",
   build: {
     manifest: "manifest.json",
-    outDir: resolve("../staticfiles"),
+    outDir: resolve("../static"),
     rollupOptions: {
       input: {
         main: "src/main.tsx",

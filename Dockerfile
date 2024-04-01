@@ -15,19 +15,22 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
     && apt-get install -y nodejs
 
 RUN npm install -g yarn
+RUN pip install uv
 
 WORKDIR /code
+
+RUN uv venv
+
+COPY requirements.txt /code
+
+RUN uv pip install -r requirements.txt
 
 COPY . /code
 
 RUN cd frontend ; yarn install ; yarn run build
 
-RUN pip install uv
-RUN uv venv
-RUN uv pip install -r requirements.txt
-
 RUN .venv/bin/python manage.py collectstatic --noinput
 
 EXPOSE 8080
 
-CMD [".venv/bin/gunicorn", "--bind", ":8080", "--workers", "3", "--threads", "2", "--max-requests", "1000", "--max-requests-jitter", "200", "--timeout", "0", "hello_vite.wsgi"]
+CMD [".venv/bin/gunicorn", "--bind", "0.0.0.0:8080", "--workers", "3", "--threads", "2", "--max-requests", "1000", "--max-requests-jitter", "200", "--timeout", "0", "hello_vite.wsgi"]
